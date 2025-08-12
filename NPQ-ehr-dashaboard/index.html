@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>North President Quirino e-HR Dashboard</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+</head>
+<body>
+<header>
+  <h1>North President Quirino e-HR Dashboard</h1>
+  <button id="logoutBtn" style="display:none;">Logout</button>
+  <button id="loginBtn">Login / Register</button>
+  <button id="themeToggle">Toggle Theme</button>
+</header>
+
+<div id="authSection" class="modal" style="display:none;">
+  <div class="modal-content">
+    <h2>Login or Register</h2>
+    <input type="email" id="emailInput" placeholder="Email" />
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <button id="loginSubmitBtn">Login</button>
+    <button id="registerSubmitBtn">Register</button>
+    <button id="closeAuthBtn">Close</button>
+    <p id="authMessage"></p>
+  </div>
+</div>
+
+<div id="app" style="display:none;">
+  <section id="announcementsSection">
+    <h2>📢 Announcements & Updates</h2>
+    <div id="announcementList"></div>
+    <textarea id="newAnnouncement" placeholder="Add new announcement..."></textarea><br/>
+    <button id="postAnnouncementBtn" style="display:none;">Post Announcement</button>
+  </section>
+
+  <section id="memosSection">
+    <h2>📑 Memos</h2>
+    <ul id="memoList"></ul>
+    <input type="text" id="newMemo" placeholder="Enter new memo..." />
+    <button id="addMemoBtn" style="display:none;">Add Memo</button>
+  </section>
+
+  <section id="deadlinesSection">
+    <h2>⏳ Deadlines</h2>
+    <ul id="deadlineList"></ul>
+    <input type="text" id="newDeadline" placeholder="Enter deadline (e.g., IPCRF - Aug 30)" />
+    <button id="addDeadlineBtn" style="display:none;">Add Deadline</button>
+  </section>
+
+  <section id="fileUploadSection">
+    <h2>📂 File Upload</h2>
+    <input type="text" id="folderName" placeholder="Enter folder/category name" />
+    <input type="file" id="fileInput" />
+    <button id="uploadFileBtn" style="display:none;">Upload</button>
+    <ul id="fileList"></ul>
+  </section>
+
+  <section id="trackersSection">
+    <h2>📊 Trackers</h2>
+    <button id="addTrackerBtn">Add New Tracker</button>
+    <div id="trackersContainer"></div>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
